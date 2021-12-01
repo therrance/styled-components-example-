@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 70px auto 0;
+`;
+
+const Title = styled.h1`
+  color: #8857d8;
+`;
+
+const Content = styled.div`
+  font-size: 24px;
+  color: ${(props) => props.color};
+  ${(props) => (props.hide ? "opacity: 0" : "opacity: 1")};
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Title>Hello</Title>
+      <Content color="red" hide>
+        Simple example
+      </Content>
+    </Wrapper>
   );
 }
 
