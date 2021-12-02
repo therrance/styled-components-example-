@@ -20,7 +20,7 @@ function Title(props) {
 function App() {
   return (
     <Wrapper>
-      <StyledTitle>Hello</StyledTitle>
+      <StyledTitle as="h1">Hello</StyledTitle>
       <Content color="red" hide>
         Simple example
       </Content>
