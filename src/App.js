@@ -5,17 +5,25 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled(Wrapper)`
+const Content = styled.div`
+  font-size: 24px;
+`;
+
+const StyledTitle = styled(Title)`
   color: #8857d8;
 `;
+
+function Title(props) {
+  return <div className={props.className}>{props.children}</div>;
+}
 
 function App() {
   return (
     <Wrapper>
-      <Title>Hello</Title>
-      {/* <Content color="red" hide>
+      <StyledTitle>Hello</StyledTitle>
+      <Content color="red" hide>
         Simple example
-      </Content> */}
+      </Content>
     </Wrapper>
   );
 }
