@@ -7,23 +7,24 @@ const Wrapper = styled.div`
   margin: 70px auto 0;
 `;
 
-const Title = styled.h1`
-  color: #8857d8;
-`;
-
-const Content = styled.div`
-  font-size: 24px;
-  color: ${(props) => props.color};
-  ${(props) => (props.hide ? "opacity: 0" : "opacity: 1")};
+const Input = styled.input`
+  padding: ${(props) => (props["data-id"] === "name" ? "10px" : "14px")};
+  border-radius: 4px;
+  border: 1px solid ${(props) => props.borderColor};
+  otline: none;
+  background: #1b1c23;
 `;
 
 function App() {
   return (
     <Wrapper>
-      <Title>Hello</Title>
-      <Content color="red" hide>
-        Simple example
-      </Content>
+      <Input
+        readOnly
+        placeholder="Your name"
+        borderColor="white"
+        data-id="name"
+        onClick={(event) => alert(event.target.dataset.id)}
+      />
     </Wrapper>
   );
 }
