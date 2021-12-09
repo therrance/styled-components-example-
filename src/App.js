@@ -1,23 +1,25 @@
-import styled, { keyframes } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
+const Button = styled.button`
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border-radius: 3px;
 
-  to {
-    transform: rotate(360deg);
-  }
+color: ${(props) => props.theme.main};
+border: 2px solid ${(props) => props.theme.main};
 `;
 
-const Rotate = styled.div`
-  display: inline-block;
-  animation: ${rotate} 2s linear infinite;
-  font-size: 100px;
-`;
+const theme = {
+  main: "mediumseagreen",
+};
 
 function App() {
-  return <Rotate>💅🏾</Rotate>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Button>Themed</Button>
+    </ThemeProvider>
+  );
 }
 
 export default App;
