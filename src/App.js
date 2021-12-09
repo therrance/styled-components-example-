@@ -1,29 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-const Parent = styled.div`
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-`;
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
-const Child = styled.div`
-  width: 20px;
-  height: 20px;
-  background: #0e85ff;
-  border-radius: 50%;
-
-  ${Parent}:hover & {
-    background: yellow;
+  to {
+    transform: rotate(360deg);
   }
 `;
 
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  font-size: 100px;
+`;
+
 function App() {
-  return (
-    <Parent>
-      Наведите сюда
-      <Child />
-    </Parent>
-  );
+  return <Rotate>💅🏾</Rotate>;
 }
 
 export default App;
